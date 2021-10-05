@@ -1,0 +1,7 @@
+{
+    "db": {
+        "mongodb": {
+            "uri": "mongodb://localhost/price-calculator"
+        }
+    }
+}

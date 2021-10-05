@@ -1,0 +1,118 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.1",
+        "title": "Price Calculator",
+        "description": "Documentation for Price Calculator"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "tags": [
+        {
+            "name": "diamond"
+        }
+    ],
+    "paths": {
+        "/diamond": {
+            "get": {
+                "tags": [
+                    "diamond"
+                ],
+                "summary": "Get diamonds data",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "color",
+                        "in": "query",
+                        "description": "diamond color",
+                        "type": "string"
+                    },
+                    {
+                        "name": "clarity",
+                        "in": "query",
+                        "description": "diamond clarity",
+                        "type": "string"
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "description": "diamond weight",
+                        "type": "number",
+                        "format": "double"
+                    },
+                    {
+                        "name": "cut",
+                        "in": "query",
+                        "description": "diamond cut",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Diamonds data",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "diamond"
+                ],
+                "summary": "Create diamond record",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "color",
+                        "in": "query",
+                        "description": "diamond color",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "clarity",
+                        "in": "query",
+                        "description": "diamond clarity",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "description": "diamond weight",
+                        "type": "number",
+                        "format": "double",
+                        "required": true
+                    },
+                    {
+                        "name": "cut",
+                        "in": "query",
+                        "description": "diamond cut",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Diamond data",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
